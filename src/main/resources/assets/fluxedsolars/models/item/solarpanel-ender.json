@@ -1,12 +1,13 @@
 {
-    "parent": "block/cube",
-    "textures": {
-        "particle": "fluxedsolars:blocks/solarpanel-ender-top",
-        "down": "fluxedsolars:blocks/solarpanel-ender-bottom",
-        "up": "fluxedsolars:blocks/solarpanel-ender-top",
-        "north": "fluxedsolars:blocks/solarpanel-ender-side",
-        "east": "fluxedsolars:blocks/solarpanel-ender-side",
-        "south": "fluxedsolars:blocks/solarpanel-ender-side",
-        "west": "fluxedsolars:blocks/solarpanel-ender-side"
+    "parent": "fluxedsolars:block/solarpanel-ender",
+    "display": {
+        "thirdperson": {
+            "rotation": [ 10, -45, 170 ],
+            "translation": [ 0, 1.5, -2.75 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
     }
+
+
+
 }

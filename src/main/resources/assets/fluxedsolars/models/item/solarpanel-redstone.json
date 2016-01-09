@@ -1,12 +1,13 @@
 {
-    "parent": "block/cube",
-    "textures": {
-        "particle": "fluxedsolars:blocks/solarpanel-redstone-top",
-        "down": "fluxedsolars:blocks/solarpanel-redstone-bottom",
-        "up": "fluxedsolars:blocks/solarpanel-redstone-top",
-        "north": "fluxedsolars:blocks/solarpanel-redstone-side",
-        "east": "fluxedsolars:blocks/solarpanel-redstone-side",
-        "south": "fluxedsolars:blocks/solarpanel-redstone-side",
-        "west": "fluxedsolars:blocks/solarpanel-redstone-side"
+    "parent": "fluxedsolars:block/solarpanel-redstone",
+    "display": {
+        "thirdperson": {
+            "rotation": [ 10, -45, 170 ],
+            "translation": [ 0, 1.5, -2.75 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
     }
+
+
+
 }
