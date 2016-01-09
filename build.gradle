@@ -50,3 +50,11 @@ processResources
         exclude 'mcmod.info'
     }
 }
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    exclude "**/*.psd"
+    classifier = 'dev'
+}
+artifacts {
+    archives deobfJar
+}

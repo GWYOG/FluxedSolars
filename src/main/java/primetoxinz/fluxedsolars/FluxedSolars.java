@@ -16,7 +16,7 @@ import primetoxinz.fluxedsolars.item.ItemBlockSolar;
 import primetoxinz.fluxedsolars.item.ItemCrafting;
 import primetoxinz.fluxedsolars.tile.TileSolar;
 
-@Mod(modid = FluxedSolars.MOD_ID, name = FluxedSolars.MOD_ID, version = "$GRADLEVERSION", dependencies = FluxedSolars.DEP)
+@Mod(modid = FluxedSolars.MOD_ID, name = FluxedSolars.MOD_ID, version = "$GRADLEVERSION", dependencies = FluxedSolars.DEP, acceptedMinecraftVersions="[1.8.8,1.8.9]")
 public class FluxedSolars {
 
 	public static final String MOD_ID = "fluxedsolars";
