@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "fluxedsolars:blocks/solarpanel-<tier>-top",
+        "down": "fluxedsolars:blocks/solarpanel-<tier>-bottom",
+        "up": "fluxedsolars:blocks/solarpanel-<tier>-top",
+        "north": "fluxedsolars:blocks/solarpanel-<tier>-side",
+        "east": "fluxedsolars:blocks/solarpanel-<tier>-side",
+        "south": "fluxedsolars:blocks/solarpanel-<tier>-side",
+        "west": "fluxedsolars:blocks/solarpanel-<tier>-side"
+    }
+}

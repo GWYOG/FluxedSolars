@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "fluxedsolars:blocks/solarpanel-redstone-top",
+        "down": "fluxedsolars:blocks/solarpanel-redstone-bottom",
+        "up": "fluxedsolars:blocks/solarpanel-redstone-top",
+        "north": "fluxedsolars:blocks/solarpanel-redstone-side",
+        "east": "fluxedsolars:blocks/solarpanel-redstone-side",
+        "south": "fluxedsolars:blocks/solarpanel-redstone-side",
+        "west": "fluxedsolars:blocks/solarpanel-redstone-side"
+    }
+}

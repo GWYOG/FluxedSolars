@@ -1,0 +1,16 @@
+[
+{
+  "modid": "fluxedsolars",
+  "name": "Fluxed Solars",
+  "description": "things",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/primetoxinz",
+  "updateUrl": "https://github.com/primetoxinz",
+  "authorList": ["PRIMETOXINZ"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

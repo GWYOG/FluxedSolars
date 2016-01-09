@@ -1,0 +1,5 @@
+{
+  "parent": "fluxedsolars:item/standard_item",
+  "textures": {
+    "layer0": "fluxedsolars:items/solarcollector" }
+}

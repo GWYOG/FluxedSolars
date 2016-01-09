@@ -1,0 +1,52 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+version = "1.0"
+group= "com.primetoxinz.fluxedsolars" 
+archivesBaseName = "fluxedsolars"
+
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+minecraft {
+    useDepAts = true
+    version = "1.8.9-11.15.0.1687"
+    runDir = "run"
+    mappings = "snapshot_20151219"
+}
+repositories {
+    maven {
+        url "http://dvs1.progwml6.com/files/maven"
+    }
+    maven {
+        name = "Modmuss50"
+        url = "http://maven.modmuss50.me/"
+    }
+}
+
+dependencies {
+    deobfCompile "mezz.jei:jei_1.8.9:2.14.0.67"
+}
+processResources
+{
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}

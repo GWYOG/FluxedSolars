@@ -1,0 +1,5 @@
+item.craftingitem-solarcollector.name=Solar Collector
+tile.solarpanel.ender.name=Ender Solar Panel
+tile.solarpanel.blaze.name=Blaze Solar Panel
+tile.solarpanel.gold.name=Gold Solar Panel
+tile.solarpanel.redstone.name=Redstone Solar Panel

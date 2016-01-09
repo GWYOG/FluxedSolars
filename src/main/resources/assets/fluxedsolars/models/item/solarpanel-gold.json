@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "fluxedsolars:blocks/solarpanel-gold-top",
+        "down": "fluxedsolars:blocks/solarpanel-gold-bottom",
+        "up": "fluxedsolars:blocks/solarpanel-gold-top",
+        "north": "fluxedsolars:blocks/solarpanel-gold-side",
+        "east": "fluxedsolars:blocks/solarpanel-gold-side",
+        "south": "fluxedsolars:blocks/solarpanel-gold-side",
+        "west": "fluxedsolars:blocks/solarpanel-gold-side"
+    }
+}
