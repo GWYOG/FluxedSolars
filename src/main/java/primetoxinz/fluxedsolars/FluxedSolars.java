@@ -1,12 +1,16 @@
 package primetoxinz.fluxedsolars;
 
+import mcp.mobius.waila.api.IWailaRegistrar;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -44,6 +48,10 @@ public class FluxedSolars {
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent e) {
 		addRecipes();
+		if(Loader.isModLoaded("Waila")) {
+			info("Initializing Waila Compat");
+			new WailaModule().init(e);
+		}
 		proxy.init(e);
 	}
 
@@ -70,5 +78,8 @@ public class FluxedSolars {
 		GameRegistry.addRecipe(new ShapedOreRecipe(solarpanel, "CCC", "pRp", "ERE", 'C', solarcollector, 'R',
 				"dustRedstone", 'p', new ItemStack(Items.ender_pearl), 'E', new ItemStack(Blocks.end_stone)));
 
+	}
+	public static void info(String info) {
+		FMLLog.info("["+MOD_ID+"]:"+info);
 	}
 }

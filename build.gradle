@@ -30,13 +30,16 @@ repositories {
         url "http://dvs1.progwml6.com/files/maven"
     }
     maven {
-        name = "Modmuss50"
-        url = "http://maven.modmuss50.me/"
+        name "Mobius Repo"
+        url "http://mobiusstrip.eu/maven"
     }
 }
 
 dependencies {
     deobfCompile "mezz.jei:jei_1.8.9:2.14.0.67"
+    compile ("mcp.mobius.waila:Waila:1.6.0-B3_1.8.8:dev") {
+        exclude group: 'mcp.mobius.waila'
+    }
 }
 processResources
 {

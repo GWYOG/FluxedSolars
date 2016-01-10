@@ -21,7 +21,14 @@ public abstract class TileGenerator extends TileBase implements IEnergyProvider,
 		this.capacity = capacity;
 		storage = new EnergyStorage(capacity);
 	}
-
+	public void setGeneration(int generates) {
+		this.generates = generates;
+		storage.setMaxExtract(generates);
+	}
+	public void setCapacity(int capacity) {
+		this.capacity=capacity;
+		storage.setCapacity(capacity);
+	}
 	public void sendPower() {
 		for (EnumFacing direction : EnumFacing.values()) {
 			int extracted = getEnergyStored(direction);

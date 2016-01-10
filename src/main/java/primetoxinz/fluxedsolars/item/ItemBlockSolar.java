@@ -26,8 +26,9 @@ public class ItemBlockSolar extends ItemBlock {
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		super.addInformation(stack, playerIn, tooltip, advanced);
 		int meta = stack.getItemDamage();
-		String info = "§a"+SolarPanelType.VALUES[meta].energyoutput + " RF / t";
-		
+		String info = "§a"+SolarPanelType.VALUES[meta].energypertick + " RF / t";
+		tooltip.add(info);
+		info = "§aHolds "+SolarPanelType.VALUES[meta].energystorage + " RF";
 		tooltip.add(info);
 		if(SolarPanelType.VALUES[meta]==SolarPanelType.BLAZE)
 			tooltip.add("Also works in the Nether");

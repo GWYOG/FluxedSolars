@@ -30,7 +30,8 @@ public class TileSolar extends TileGenerator {
 	public void update() {
 		IBlockState state = worldObj.getBlockState(pos);
 		SolarPanelType TIER = state.getValue(BlockSolar.TIER);
-		generates = state.getValue(BlockSolar.TIER).energyoutput;
+		setGeneration(TIER.energypertick);
+		setCapacity(TIER.energystorage);
 		int particles = Minecraft.getMinecraft().gameSettings.particleSetting;
 		if (!worldObj.isRemote) {
 			running = canGenerate(pos);
@@ -113,7 +114,7 @@ public class TileSolar extends TileGenerator {
 		boolean isBlaze = worldObj.getBlockState(pos).getValue(BlockSolar.TIER) == SolarPanelType.BLAZE;
 		boolean isNether = worldObj.provider.getDimensionId() == -1;
 		boolean isEnder = worldObj.getBlockState(pos).getValue(BlockSolar.TIER) == SolarPanelType.ENDER;
-
-		return (isEnder && !isNether) || (isNether && isBlaze) || (time && sky && weather);
+		boolean full = storage.getEnergyStored() == storage.getMaxEnergyStored();
+		return !full && ((isEnder && !isNether) || (isNether && isBlaze) || (time && sky && weather));
 	}
 }
