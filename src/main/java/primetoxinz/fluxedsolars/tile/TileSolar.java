@@ -32,7 +32,10 @@ public class TileSolar extends TileGenerator {
 		SolarPanelType TIER = state.getValue(BlockSolar.TIER);
 		setGeneration(TIER.energypertick);
 		setCapacity(TIER.energystorage);
-		int particles = Minecraft.getMinecraft().gameSettings.particleSetting;
+		int particles = 0;
+		if(worldObj.isRemote) {
+			particles = Minecraft.getMinecraft().gameSettings.particleSetting;
+		}
 		if (!worldObj.isRemote) {
 			running = canGenerate(pos);
 			worldObj.markBlockForUpdate(pos);
