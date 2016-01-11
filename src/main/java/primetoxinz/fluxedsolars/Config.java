@@ -28,7 +28,7 @@ public class Config extends Configuration {
 			name = type.getName()+"_energypertick";
 			comment = "Change energy production of " + type.getName() + " tier";
 			type.energypertick=getInt(name, category, default_energypertick[type.ordinal()], 0, Integer.MAX_VALUE, comment);
-			name = type.getName()+"_energyenergystorage";
+			name = type.getName()+"_energystorage";
 			comment = "Change energy storage of " + type.getName() + " tier";
 			type.energystorage=getInt(name, category, default_energystorage[type.ordinal()], 0, Integer.MAX_VALUE, comment);
 
