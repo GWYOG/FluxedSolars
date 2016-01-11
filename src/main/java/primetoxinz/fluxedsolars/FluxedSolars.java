@@ -65,18 +65,17 @@ public class FluxedSolars {
 		ItemStack solarcollector = new ItemStack(craftingitem, 4, 0);
 		GameRegistry.addRecipe(new ShapedOreRecipe(solarcollector, "GGG", "LLL", "IRI", 'G',
 				new ItemStack(Blocks.glass_pane), 'L', "gemLapis", 'I', "ingotIron", 'R', "dustRedstone"));
-
 		GameRegistry.addRecipe(new ShapedOreRecipe(solarpanel, "CCC", "IRI", "IRI", 'C', solarcollector, 'I',
 				"ingotIron", 'R', "dustRedstone"));
 		solarpanel.setItemDamage(1);
 		GameRegistry.addRecipe(new ShapedOreRecipe(solarpanel, "CCC", "gRg", "gRg", 'C', solarcollector, 'R',
-				"dustRedstone", 'g', "blockGold"));
+				"dustRedstone", 'g', "ingotGold"));
 		solarpanel.setItemDamage(2);
-		GameRegistry.addRecipe(new ShapedOreRecipe(solarpanel, "CCC", "bRb", "gRg", 'C', solarcollector, 'R',
+		GameRegistry.addRecipe(new ShapedOreRecipe(solarpanel, "CCC", "bDb", "gRg",'D', "gemDiamond", 'C', solarcollector, 'R',
 				"dustRedstone", 'b', new ItemStack(Items.blaze_rod), 'g', "blockGold"));
 		solarpanel.setItemDamage(3);
-		GameRegistry.addRecipe(new ShapedOreRecipe(solarpanel, "CCC", "pRp", "ERE", 'C', solarcollector, 'R',
-				"dustRedstone", 'p', new ItemStack(Items.ender_pearl), 'E', new ItemStack(Blocks.end_stone)));
+		GameRegistry.addRecipe(new ShapedOreRecipe(solarpanel, "CCC", "pDp", "ERE", 'C', solarcollector, 'R',
+				"dustRedstone",'D', "gemDiamond", 'p', new ItemStack(Items.ender_pearl), 'E', new ItemStack(Blocks.end_stone)));
 
 	}
 	public static void info(String info) {

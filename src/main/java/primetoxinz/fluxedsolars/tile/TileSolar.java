@@ -111,7 +111,7 @@ public class TileSolar extends TileGenerator {
 	}
 
 	public boolean canGenerate(BlockPos pos) {
-		boolean sky = (worldObj.getBlockState(worldObj.getTopSolidOrLiquidBlock(pos)).getBlock() == Blocks.air);
+		boolean sky = worldObj.canSeeSky(pos.up());
 		boolean time = (worldObj.isDaytime());
 		boolean weather = !worldObj.isRaining();
 		boolean isBlaze = worldObj.getBlockState(pos).getValue(BlockSolar.TIER) == SolarPanelType.BLAZE;
