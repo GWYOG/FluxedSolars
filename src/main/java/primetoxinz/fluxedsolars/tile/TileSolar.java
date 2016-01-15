@@ -11,6 +11,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import primetoxinz.fluxedsolars.FluxedSolars;
 import primetoxinz.fluxedsolars.block.BlockSolar;
 import primetoxinz.fluxedsolars.tile.TileGenerator;
 
@@ -29,30 +30,31 @@ public class TileSolar extends TileGenerator {
 	@Override
 	public void update() {
 		IBlockState state = worldObj.getBlockState(pos);
-		SolarPanelType TIER = state.getValue(BlockSolar.TIER);
-		setGeneration(TIER.energypertick);
-		setCapacity(TIER.energystorage);
-		int particles = 0;
-		if(worldObj.isRemote) {
-			particles = Minecraft.getMinecraft().gameSettings.particleSetting;
-		}
-		if (!worldObj.isRemote) {
-			running = canGenerate(pos);
-			worldObj.markBlockForUpdate(pos);
-		}
-		if (running) {
-			if (particles < 2) {
-				EnumParticleTypes type = EnumParticleTypes.REDSTONE;
-				if (TIER == SolarPanelType.ENDER)
-					type = EnumParticleTypes.PORTAL;
-				else if (TIER == SolarPanelType.BLAZE)
-					type = EnumParticleTypes.FLAME;
-				spawnParticles(worldObj, pos, particles, type);
+		if (state.getBlock() == FluxedSolars.solar) {
+			SolarPanelType TIER = state.getValue(BlockSolar.TIER);
+			setGeneration(TIER.energypertick);
+			setCapacity(TIER.energystorage);
+			int particles = 0;
+			if (worldObj.isRemote) {
+				particles = Minecraft.getMinecraft().gameSettings.particleSetting;
 			}
-			creatingPower();
+			if (!worldObj.isRemote) {
+				running = canGenerate(pos);
+				worldObj.markBlockForUpdate(pos);
+			}
+			if (running) {
+				if (particles < 2) {
+					EnumParticleTypes type = EnumParticleTypes.REDSTONE;
+					if (TIER == SolarPanelType.ENDER)
+						type = EnumParticleTypes.PORTAL;
+					else if (TIER == SolarPanelType.BLAZE)
+						type = EnumParticleTypes.FLAME;
+					spawnParticles(worldObj, pos, particles, type);
+				}
+				creatingPower();
+			}
+			sendPower();
 		}
-		sendPower();
-
 	}
 
 	private void spawnParticles(World worldIn, BlockPos pos, int particles, EnumParticleTypes type) {
