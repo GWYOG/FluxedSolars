@@ -38,7 +38,6 @@ public abstract class TileGenerator extends TileBase implements IEnergyProvider,
 			if (isPoweredTile(tile, direction)) {
 				if (canConnectEnergy(direction)) {
 					if (tile instanceof IEnergyHandler) {
-						System.out.println(tile.getBlockType().getUnlocalizedName());
 						IEnergyHandler handler = (IEnergyHandler) tile;
 						int neededRF = handler.receiveEnergy(direction.getOpposite(), extracted, false);
 
