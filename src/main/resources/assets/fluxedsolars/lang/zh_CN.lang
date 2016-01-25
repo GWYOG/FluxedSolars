@@ -1,0 +1,5 @@
+item.craftingitem-solarcollector.name=太阳能收集器
+tile.solarpanel.ender.name=末影太阳能板
+tile.solarpanel.blaze.name=烈焰太阳能板
+tile.solarpanel.gold.name=黄金太阳能板
+tile.solarpanel.redstone.name=红石太阳能板
